@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pogoda</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<div style="margin: 100px auto; max-width: 1000px; width: 100%">
+    <h1 th:text="|Aktualna pogoda dla miasta: ${cityName}|"></h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <td>Wskaznik</td>
+            <td>Wartość</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Temperatura:</td>
+            <td th:text="|${indicators.temp} °C|">26.3 °C</td>
+        </tr>
+        <tr>
+            <td>Temperatura odczuwalna:</td>
+            <td th:text="|${indicators.feelsLike} °C|">25 °C<</td>
+        </tr>
+        <tr>
+            <td>Temperatura minimalna:</td>
+            <td th:text="|${indicators.tempMin} °C|">21.3 °C</td>
+        </tr>
+        <tr>
+            <td>Temperatura maksymalna:</td>
+            <td th:text="|${indicators.tempMax} °C|">28.3 °C</td>
+        </tr>
+        <tr>
+            <td>Cisnienie:</td>
+            <td th:text="|${indicators.pressure} hPa|">1115 hPa</td>
+        </tr>
+        <tr>
+            <td>Wilgotnosc powietrza:</td>
+            <td th:text="|${indicators.humidity} %|">70 %</td>
+        </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/}" class="text-center">Sprawdz pogode w innym miescie</a>
+</div>
+</body>
+</html>
