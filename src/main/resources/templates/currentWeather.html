@@ -21,9 +21,29 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="indicator: ${indicators}">
-            <td th:text="${indicator.name}">Temp</td>
-            <td th:text="${indicator.value}">26.3</td>
+        <tr>
+            <td>Temperatura:</td>
+            <td th:text="|${indicators.temp} °C|">26.3 °C</td>
+        </tr>
+        <tr>
+            <td>Temperatura odczuwalna:</td>
+            <td th:text="|${indicators.feelsLike} °C|">25 °C<</td>
+        </tr>
+        <tr>
+            <td>Temperatura minimalna:</td>
+            <td th:text="|${indicators.tempMin} °C|">21.3 °C</td>
+        </tr>
+        <tr>
+            <td>Temperatura maksymalna:</td>
+            <td th:text="|${indicators.tempMax} °C|">28.3 °C</td>
+        </tr>
+        <tr>
+            <td>Cisnienie:</td>
+            <td th:text="|${indicators.pressure} hPa|">1115 hPa</td>
+        </tr>
+        <tr>
+            <td>Wilgotnosc powietrza:</td>
+            <td th:text="|${indicators.humidity} %|">70 %</td>
         </tr>
         </tbody>
     </table>
